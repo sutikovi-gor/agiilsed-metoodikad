@@ -4,7 +4,9 @@ class Controller {
 
 	public static function StartSite() {
         $arr = News::getLast10News();
+        //print_r($arr);
         include_once 'view/start.php';
+        return;
     }
 
     public static function AllCategory() {
@@ -31,4 +33,45 @@ class Controller {
         include_once 'view/error404.php';
     }            
  
+    public static function InsertComment($c,$id){
+        Comments::InsertComment($c,$id);
+        //self::NewsByID($id);
+        header('Location:news?id='.$id.'#ctable');
+    } 
+
+// список комментариев
+    public static function Comments($newsid) {
+        $arr = Comments::getCommentByNewsID($newsid);
+        ViewComments::CommentsByNews ($arr);
+    }
+
+// количество комментариев к новости
+
+    public static function CommentsCount($newsid) {
+        $arr = Comments::getCommentCountByNewsID($newsid);
+        ViewComments::CommentsCount ($arr);
+
+    }
+
+    //ссылка переход к списку коммнтариев
+
+    public static function CommentsCountWithAncor($newsid) {
+        $arr = Comments::getCommentCountByNewsID($newsid);
+        ViewComments::CommentsCountWithAncor ($arr);
+
+    }
+
+    public function registerForm()
+    {
+    	include_once('view/formRegister.php');
+    }
+    public function registerUser()
+    {
+    	$result = Register::registerUser();
+
+    	include_once('view/answerRegister.php');
+    }  
+
+
+
 }

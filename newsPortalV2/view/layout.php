@@ -37,7 +37,7 @@
 			</div>
 		</section>
 		<hr>
-		<p style="display:block; text-align:center;">SPTV20 2020 a. &copy</p>
+		<p style="display:block; text-align:center;">SPTV20 2021 a. &copy</p>
 	</body>
 
 </html>

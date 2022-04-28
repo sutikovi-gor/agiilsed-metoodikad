@@ -60,7 +60,7 @@ class Controller {
         ViewComments::CommentsCountWithAncor ($arr);
 
     }
-
+ // регистрация
     public function registerForm()
     {
     	include_once('view/formRegister.php');

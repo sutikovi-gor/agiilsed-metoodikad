@@ -22,14 +22,14 @@ elseif ($path ==  'insertcomment' and isset($_GET['comment'],$_GET['id']))
         $respose = Controller::InsertComment($_GET['comment'],$_GET['id']);
     }
 
-//elseif ($path == 'registerForm') 
-//{
-//    $response = Controller::registerForm();
-//}
-//elseif ($path == 'registerAnswer') 
-//{
-//    $response = Controller::registerUser();
-//} 
+elseif ($path == 'registerForm') 
+{
+    $response = Controller::registerForm();
+}
+elseif ($path == 'registerAnswer') 
+{
+    $response = Controller::registerUser(); 
+} 
 
 else {
     $response = Controller::error404();
